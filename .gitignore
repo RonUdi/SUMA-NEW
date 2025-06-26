@@ -1,0 +1,78 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Medical Device Specific
+/patient_data/
+/clinical_data/
+/logs/*.log
+/temp/
+/cache/
+*.dcm
+*.dicom
+
+# Test artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# OS specific
+.DS_Store
+Thumbs.db
+*.tmp
+
+# Configuration
+config/local_*.json
+config/secrets.json
+.env.local
+
+# Build artifacts
+*.exe
+*.msi
+*.dmg
+
+# FDA/Regulatory - Keep templates but ignore filled versions
+regulatory/submissions/*
+!regulatory/submissions/*.template
+regulatory/clinical_data/*
+regulatory/validation_reports/*
+!regulatory/validation_reports/*.template
