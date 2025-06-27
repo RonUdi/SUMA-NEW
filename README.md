@@ -34,13 +34,13 @@ SUMA GUI provides an intuitive interface for clinical researchers to:
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd suma-gui
+cd suma3_project
 
 # Install dependencies
 pip install -r requirements.txt
 
 # Run the application
-python run_suma3.py
+python main.py
 ```
 
 ## Requirements
@@ -53,14 +53,17 @@ python run_suma3.py
 ## Project Structure
 
 ```
-suma-gui/
-├── src/ui/
-│   ├── windows/          # Main windows (startup, results viewer)
-│   ├── dialogs/          # Dialog boxes (analysis, results selection)
-│   ├── components/       # Reusable UI components
-│   ├── resources/        # Styles, themes, UI loader utilities
-│   └── ui_files/         # Qt Designer .ui files
-├── run_suma3.py          # Main application entry point
+suma3_project/
+├── src/
+│   ├── config/           # Application constants and configuration
+│   ├── core/             # Central signal system
+│   ├── resources/        # Color palette and style management
+│   └── ui/
+│       ├── components/   # Base UI components
+│       ├── dialogs/      # Dialog boxes (analysis, results selection)
+│       └── windows/      # Main windows (startup, results viewer)
+├── main.py               # Main application entry point
+├── README.md             # Project documentation
 └── requirements.txt      # Dependencies
 ```
 
@@ -83,16 +86,15 @@ Use Qt Designer for creating new UI components:
 
 ### Color Scheme
 
-- **Primary Blue**: #2E86AB
-- **Secondary Purple**: #A23B72  
-- **Accent Orange**: #F18F01
-- **Success Green**: #28A745
-- **Warning Yellow**: #FFC107
-- **Error Red**: #DC3545
+- **Brand Blue**: #004466
+- **Light Blue**: #007acc
+- **White**: #FFFFFF
+- **Text Primary**: #333333
+- **Text Secondary**: #999999
 
 ## Usage
 
-1. **Launch Application**: Run `python run_suma3.py`
+1. **Launch Application**: Run `python main.py`
 2. **Start New Analysis**: Click "Start Analysis" and follow the workflow
 3. **View Previous Results**: Click "View Results" to browse existing analyses
 4. **3D Visualization**: Use the results viewer for interactive data exploration

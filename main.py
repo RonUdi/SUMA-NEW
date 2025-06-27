@@ -12,8 +12,8 @@ from PyQt5.QtCore import Qt
 # Add current directory to path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from suma_gui.ui.windows.main_window import SumaMainWindow
-from suma_gui.config.constants import APP_NAME, APP_VERSION, COMPANY_NAME
+from src.ui.windows.main_window import SumaMainWindow
+from src.config.constants import APP_NAME, APP_VERSION, COMPANY_NAME
 
 def main():
     """נקודת כניסה ראשית"""

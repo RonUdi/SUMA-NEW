@@ -10,8 +10,7 @@ from PyQt5.QtCore import Qt
 from ..components.base_widget import SumaBaseWidget
 from ...resources.styles import SumaStyles
 from ...resources.colors import SumaColors
-from ...resources.layer_colors import LayerColormaps
-from ...config.constants import ANALYSIS_LAYERS
+
 
 class ResultsViewer(SumaBaseWidget):
     """מציג תוצאות עם ויזואליזציה 3D"""
@@ -29,7 +28,7 @@ class ResultsViewer(SumaBaseWidget):
         top_bar = self._create_top_bar()
         layout.addWidget(top_bar)
         
-        # Main viewer area
+        # Main viewer area - Napari integration
         viewer_area = self._create_viewer_area()
         layout.addWidget(viewer_area)
         
@@ -69,7 +68,7 @@ class ResultsViewer(SumaBaseWidget):
         return top_bar
     
     def _create_viewer_area(self):
-        """יצירת אזור הצגה"""
+        """יצירת אזור הצגה עם Napari"""
         viewer_widget = QWidget()
         viewer_widget.setStyleSheet(f"""
             QWidget {{
@@ -82,19 +81,16 @@ class ResultsViewer(SumaBaseWidget):
         layout = QVBoxLayout(viewer_widget)
         layout.setAlignment(Qt.AlignCenter)
         
-        # Napari viewer area
-        info_text = f"""
-        Napari 3D Viewer
+        # Napari viewer placeholder
+        info_text = """
+        Napari 3D Viewer Integration
         
-        Analysis Layers:
-        {' • '.join(ANALYSIS_LAYERS)}
+        • All layer controls built into Napari
+        • Interactive 3D visualization
+        • ΔTE₀ overlay on CT scan
+        • Iron accumulation mapping
         
-        Colormaps:
-        • ΔTE₀: {LayerColormaps.DELTA_TE0}
-        • Iron: {LayerColormaps.IRON}
-        • PRE TE₁: {LayerColormaps.PRE_TE1}
-        • POST TE₁: {LayerColormaps.POST_TE1}
-        • CT: {LayerColormaps.CT}
+        Ready for Napari widget embedding
         """
         
         info_label = QLabel(info_text)
@@ -124,23 +120,10 @@ class ResultsViewer(SumaBaseWidget):
         
         layout = QHBoxLayout(controls_frame)
         
-        # Slice slider
-        slice_label = QLabel("Slice:")
-        self.slice_slider = QSlider(Qt.Horizontal)
-        self.slice_slider.setRange(0, 100)
-        self.slice_slider.setValue(50)
-        
-        # 3D toggle
-        self.toggle_3d_btn = QPushButton("3D View")
-        self.toggle_3d_btn.setCheckable(True)
-        
         # Export button
         self.export_btn = QPushButton("Export PDF")
         self.export_btn.setStyleSheet(SumaStyles.get_primary_button_style())
         
-        layout.addWidget(slice_label)
-        layout.addWidget(self.slice_slider)
-        layout.addWidget(self.toggle_3d_btn)
         layout.addStretch()
         layout.addWidget(self.export_btn)
         

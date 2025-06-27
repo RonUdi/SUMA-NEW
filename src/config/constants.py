@@ -8,8 +8,4 @@ MIN_WINDOW_HEIGHT = 700
 DEFAULT_WINDOW_WIDTH = 1200
 DEFAULT_WINDOW_HEIGHT = 800
 
-ANALYSIS_LAYERS = [
-    "CT", "PRE TE₁", "POST TE₁", "PRE TE₀", "POST TE₀", "ΔTE₀", "Iron"
-]
-
-SUPPORTED_FORMATS = [".dcm", ".json", ".npz", ".pdf"] 
+ 
