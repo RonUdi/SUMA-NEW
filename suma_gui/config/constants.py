@@ -1,0 +1,15 @@
+APP_NAME = "SUMA"
+APP_VERSION = "1.0.0"
+COMPANY_NAME = "New Phase Ltd."
+WINDOW_TITLE = "SUMA - Signal Utility MRI Analysis"
+
+MIN_WINDOW_WIDTH = 1000
+MIN_WINDOW_HEIGHT = 700
+DEFAULT_WINDOW_WIDTH = 1200
+DEFAULT_WINDOW_HEIGHT = 800
+
+ANALYSIS_LAYERS = [
+    "CT", "PRE TE₁", "POST TE₁", "PRE TE₀", "POST TE₀", "ΔTE₀", "Iron"
+]
+
+SUPPORTED_FORMATS = [".dcm", ".json", ".npz", ".pdf"] 

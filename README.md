@@ -1,214 +1,184 @@
-# SUMA 3 - Signal Utility MRI Analysis
-## FDA 510(k) Class II Medical Device Software
+# SUMA GUI
 
-### 🏥 Regulatory Information
-- **Device Classification**: Class II Medical Device Software
-- **FDA Product Code**: LLZ (Magnetic Resonance Diagnostic Device)
-- **IEC 62304 Compliance**: Class B Software
-- **ISO 13485**: Quality Management System Compliant
-- **DICOM Conformance**: Part 10 Compliant
-- **Software Lifecycle**: IEC 62304 Process Compliant
+**Signal Utility MRI Analysis - Graphical User Interface**
 
-### 🎯 Intended Use
-SUMA 3 is intended for use by qualified healthcare professionals for the quantitative analysis of MRI T2* relaxometry data to assess tissue iron concentration changes in clinical research and diagnostic applications.
+A modern, professional desktop GUI application for analyzing MRI and CT scans according to the SUMA 3 Software Requirements Specification.
 
-**Indications for Use:**
-- Quantitative T2* relaxometry analysis for tissue iron assessment
-- Longitudinal comparison of pre/post treatment iron levels
-- Multi-echo MRI data processing and visualization
-- Clinical research applications in iron metabolism studies
+## Overview
 
-**Contraindications:**
-- Not intended for primary diagnostic decisions without clinical correlation
-- Requires interpretation by qualified radiologists or clinicians
-- Not suitable for emergency diagnostic procedures
-- Not validated for pediatric use (<18 years)
+SUMA GUI provides an intuitive interface for clinical researchers to:
+- Start new MRI/CT analysis workflows
+- View and manage analysis results
+- Visualize medical imaging data with 3D support
+- Export analysis reports
 
-### 🔒 Safety & Risk Management (ISO 14971)
+## Features
 
-#### Risk Classifications:
-- **High Risk**: Data integrity, calculation accuracy, patient identification
-- **Medium Risk**: User interface errors, workflow interruptions, data export
-- **Low Risk**: Performance optimization, cosmetic UI issues
+- **Modern Material Design UI** - Professional, clean interface
+- **Startup Screen** - Welcome screen with clear action options
+- **Analysis Workflow** - Guided process for new analysis
+- **Results Viewer** - Advanced visualization with Napari integration
+- **Export Capabilities** - PDF report generation
+- **Multiple Layer Support** - CT, MRI PRE/POST, ΔTE₀, Iron maps
 
-#### Safety Controls:
-- Validated input data verification algorithms
-- Redundant calculation verification against reference standards
-- Complete audit trail for all user actions and system operations
-- Role-based user access control with authentication
-- Automated data backup and recovery systems
-- Error logging and incident reporting mechanisms
+## Application Flow
 
-### 🏗️ Software Architecture (IEC 62304 Compliant)
+1. **Startup Screen**: Welcome with [Start Analysis] and [View Results] buttons
+2. **Start Analysis Dialog**: Patient/Treatment input and data folder selection
+3. **Progress Tracking**: Real-time analysis progress with detailed status
+4. **Results Viewer**: Interactive 3D visualization with layer controls
+5. **Export Options**: PDF report generation
 
-```
-suma3/
-├── regulatory/              # FDA submission documentation
-│   ├── risk_management/    # ISO 14971 risk analysis files
-│   ├── verification/       # V&V protocols and reports
-│   ├── validation/         # Clinical validation studies
-│   ├── traceability/       # Requirements traceability matrix
-│   ├── change_control/     # ECO and change documentation
-│   └── submissions/        # 510(k) submission materials
-├── core/                   # SOUP-qualified core algorithms
-│   ├── entities/          # Validated data structures
-│   ├── interfaces/        # Abstract base classes
-│   ├── algorithms/        # Verified calculation engines
-│   ├── validators/        # Data validation modules
-│   └── exceptions/        # Controlled error handling
-├── data/                   # DICOM-compliant data management
-│   ├── loaders/           # Validated DICOM parsing engines
-│   ├── repositories/      # Audited data access patterns
-│   ├── converters/        # Format conversion utilities
-│   └── anonymizers/       # HIPAA-compliant data anonymization
-├── processing/             # Clinical analysis algorithms
-│   ├── t2star/           # T2* relaxometry calculation engines
-│   ├── registration/     # Image alignment algorithms
-│   ├── workflows/        # Clinical analysis workflows
-│   ├── quality/          # Quality assurance checks
-│   └── statistics/       # Statistical analysis modules
-├── ui/                    # Medical-grade user interface (Class C)
-│   ├── controllers/      # UI logic with audit trails
-│   ├── views/           # Clinical workflow interfaces
-│   ├── validators/      # User input validation
-│   ├── widgets/         # Custom medical UI components
-│   └── themes/          # Clinical display themes
-├── services/              # Infrastructure and support services
-│   ├── audit/           # Comprehensive audit trail system
-│   ├── security/        # Authentication and encryption
-│   ├── config/          # Configuration management
-│   ├── logging/         # Clinical-grade logging system
-│   ├── reporting/       # Clinical report generation
-│   └── backup/          # Data backup and recovery
-├── testing/               # Comprehensive V&V test framework
-│   ├── unit/            # Algorithm unit test suites
-│   ├── integration/     # System integration tests
-│   ├── clinical/        # Clinical validation protocols
-│   ├── usability/       # Human factors validation
-│   ├── security/        # Cybersecurity testing
-│   └── performance/     # Performance validation tests
-├── documentation/         # Technical and regulatory docs
-│   ├── srs/             # Software Requirements Specification
-│   ├── sdd/             # Software Design Document
-│   ├── user_manual/     # Clinical user documentation
-│   ├── training/        # User training materials
-│   ├── maintenance/     # Software maintenance procedures
-│   └── api/             # Technical API documentation
-└── deployment/            # Validated deployment tools
-    ├── installers/      # Clinical installation packages
-    ├── configurations/ # Validated system configurations
-    └── scripts/         # Deployment automation scripts
-```
-
-### 📋 Key Clinical Features
-
-#### Core Analysis Capabilities:
-- **Multi-Echo T2* Analysis**: Exponential decay curve fitting with confidence intervals
-- **Tissue Iron Quantification**: Validated correlation with iron concentration
-- **Longitudinal Assessment**: Pre/post treatment comparison with statistical analysis
-- **Image Registration**: Sub-voxel accuracy alignment between timepoints
-- **Quality Metrics**: Automated QA checks and quality scoring
-
-#### Clinical Workflow:
-1. **Patient Data Import**: DICOM-compliant multi-echo MRI loading
-2. **Data Validation**: Comprehensive input data verification
-3. **T2* Mapping**: Pixel-wise exponential fitting with R² filtering
-4. **Image Alignment**: Automated registration with manual review
-5. **Delta Analysis**: Statistical comparison of pre/post measurements
-6. **Clinical Reporting**: Standardized quantitative reports
-
-### ✅ Verification & Validation Status
-
-#### Completed Verification:
-- [x] Algorithm verification against NIST traceable phantoms
-- [x] DICOM conformance statement validation
-- [x] Software performance benchmarking
-- [x] Cybersecurity penetration testing
-- [x] IEC 62304 software lifecycle compliance
-
-#### Ongoing Validation:
-- [ ] Multi-center clinical validation study (IRB approved)
-- [ ] Inter-observer reproducibility analysis
-- [ ] Comparison with literature reference methods
-- [ ] Clinical workflow usability validation
-- [ ] Long-term stability and reliability testing
-
-### 🔐 Security & Privacy
-
-#### HIPAA Compliance:
-- End-to-end encryption for all patient data
-- Audit logs for all data access and modifications
-- Role-based access control with strong authentication
-- Secure data transmission protocols
-- Patient data anonymization capabilities
-
-#### Cybersecurity Framework:
-- NIST Cybersecurity Framework implementation
-- Regular vulnerability assessments
-- Incident response procedures
-- Security patch management process
-- Network isolation capabilities for clinical environments
-
-### 📊 Clinical Evidence Package
-
-#### Validation Studies:
-- **Phantom Study**: n=25 phantoms, T2* range 5-50ms, <3% error
-- **Clinical Study**: n=150 patients, multi-center validation
-- **Reproducibility Study**: Inter/intra-observer agreement >0.95
-- **Comparative Study**: Correlation with liver biopsy iron content
-- **Longitudinal Study**: Treatment response assessment validation
-
-#### Publications:
-- Peer-reviewed validation publications in preparation
-- Conference presentations at ISMRM and RSNA
-- Clinical practice guidelines contribution
-
-### 🚀 Installation & Deployment
+## Installation
 
 ```bash
-# Clinical installation (GxP environment)
-# Requires IT administrator privileges
-sudo python -m suma3.clinical_install --validate-environment
+# Clone the repository
+git clone <repository-url>
+cd suma-gui
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the application
+python run_suma3.py
 ```
 
-#### System Requirements:
-- **OS**: Windows 10/11 LTSC, RHEL 8+, or Ubuntu 20.04 LTS
-- **RAM**: 32GB minimum, 64GB recommended
-- **Storage**: 500GB SSD with RAID backup
-- **GPU**: CUDA-compatible for acceleration (optional)
-- **Network**: Isolated clinical network or air-gapped system
+## Requirements
 
-### 📞 Clinical Support
+- **Python 3.8+**
+- **PyQt5** - GUI framework
+- **Napari** (optional) - 3D visualization
+- **Windows 10+** (recommended)
 
-- **Technical Support**: +1-800-SUMA-MED (24/7 clinical hours)
-- **Clinical Support**: clinical-support@suma3-medical.com
-- **Adverse Event Reporting**: safety@suma3-medical.com
-- **Training Services**: training@suma3-medical.com
-- **Regulatory Questions**: regulatory@suma3-medical.com
+## Project Structure
 
-### 📄 Regulatory Documentation
+```
+suma-gui/
+├── src/ui/
+│   ├── windows/          # Main windows (startup, results viewer)
+│   ├── dialogs/          # Dialog boxes (analysis, results selection)
+│   ├── components/       # Reusable UI components
+│   ├── resources/        # Styles, themes, UI loader utilities
+│   └── ui_files/         # Qt Designer .ui files
+├── run_suma3.py          # Main application entry point
+└── requirements.txt      # Dependencies
+```
 
-#### Completed Submissions:
-- [ ] FDA 510(k) Pre-Submission (Q-Sub)
-- [ ] ISO 13485 Quality Management System Certification
-- [ ] IEC 62304 Software Lifecycle Documentation
-- [ ] DICOM Conformance Statement
-- [ ] Cybersecurity Documentation (FDA Guidance)
+## Development
+
+### UI Design
+
+The interface follows the Software Requirements Specification (SRS) exactly:
+- Startup screen with logo and action buttons
+- Modal dialogs for analysis and results
+- Embedded Napari viewer for 3D visualization
+- Professional medical application styling
+
+### Qt Designer Integration
+
+Use Qt Designer for creating new UI components:
+1. Create .ui files in `src/ui/ui_files/`
+2. Use the UI loader utilities for integration
+3. Follow the established styling system
+
+### Color Scheme
+
+- **Primary Blue**: #2E86AB
+- **Secondary Purple**: #A23B72  
+- **Accent Orange**: #F18F01
+- **Success Green**: #28A745
+- **Warning Yellow**: #FFC107
+- **Error Red**: #DC3545
+
+## Usage
+
+1. **Launch Application**: Run `python run_suma3.py`
+2. **Start New Analysis**: Click "Start Analysis" and follow the workflow
+3. **View Previous Results**: Click "View Results" to browse existing analyses
+4. **3D Visualization**: Use the results viewer for interactive data exploration
+5. **Export Reports**: Generate PDF reports from the results viewer
+
+## Architecture
+
+- **Modular Design**: Separate components for different UI elements
+- **Signal-Slot Architecture**: PyQt5 event handling
+- **Responsive Layout**: Adapts to different screen sizes
+- **Theme System**: Centralized styling and color management
+
+## Contributing
+
+1. Follow the established code structure
+2. Use the provided styling system
+3. Test UI responsiveness
+4. Maintain SRS compliance
+
+## License
+
+© 2025 New Phase Ltd. - For internal research use only.
 
 ---
 
-**⚠️ IMPORTANT MEDICAL DEVICE NOTICE**
+**Note**: This is a GUI-only implementation. For full analysis capabilities, integrate with the SUMA 3 backend analysis engine.
 
-This software is a medical device intended for use by qualified healthcare professionals only. Results must be interpreted by trained radiologists or clinicians familiar with MRI T2* relaxometry techniques. This device is currently under FDA review and has not received 510(k) clearance.
 
-**Manufacturer Information:**
-SUMA Medical Technologies Ltd.  
-123 Medical Device Blvd, Suite 100  
-Clinical City, CC 12345  
-Phone: +1-800-SUMA-MED  
-Email: regulatory@suma3-medical.com  
-UDI-DI: (01)00850006000227  
 
-**© 2025 SUMA Medical Technologies Ltd. All rights reserved.**
-**FDA Registration Number: Pending**
-**ISO 13485:2016 Certified Manufacturer** 
+
+---
+
+## Software Requirements Specification Summary
+
+**SUMA 3** is a desktop software tool for analyzing MRI and CT scans of clinical trial patients. It automatically computes TE₀, iron accumulation, and their changes over time, using multi-echo MRI data. The results are spatially aligned and overlaid on CT images for clear anatomical visualization and export.
+
+### Clinical Workflow
+
+Each treatment involves analysis of:
+- **MRI PRE-treatment** (baseline, T2* multi-echo)
+- **MRI POST-treatment** (follow-up, same sequence) 
+- **CT** (anatomical reference)
+
+The system calculates and compares:
+- **TE₀** (T2* fit)
+- **R²** (fit quality)
+- **Iron accumulation** (1 / TE₀)
+- **ΔTE₀ and ΔIron** (POST − PRE)
+
+The main result is a **ΔTE₀ map overlaid on the CT scan** to visualize localized tissue changes after treatment.
+
+### Analysis Pipeline
+
+1. **DICOM Parsing** - Reads EchoTime and SliceLocation, groups by Z and TE
+2. **TE₀ Calculation** - First 4 TE ≥ 1.0 ms → fit S(TE) = S₀ · exp(−TE / TE₀)  
+3. **Image Alignment** - PRE→POST (rigid/affine), MRI→CT
+4. **ΔTE₀ and ΔIron** - Calculates relative and absolute changes
+5. **Report Generation** - PDF with CT overlay and ΔTE₀ maps
+
+### System Requirements
+
+- **OS**: Windows 10+
+- **RAM**: Min 4 GB (8 GB recommended)
+- **GPU**: Optional (for 3D visualization)
+- **Processing time**: Up to 30 minutes per case
+- **Storage**: ~300 MB per case
+
+### Data Structure
+
+```
+Patient_data/
+├── 001/
+│   ├── 01/
+│   │   ├── raw_dicom/ (PRE/POST/CT)
+│   │   ├── Mri_pre_analyzed.json
+│   │   ├── Mri_post_analyzed.json
+│   │   ├── Aligned_data.json
+│   │   └── analyzed_maps.npz
+├── Reports/
+│   └── 001_01_report.pdf
+```
+
+---
+
+**⚠️ RESEARCH USE ONLY**
+
+SUMA 3 is for internal research use only by New Phase Ltd. No diagnosis or clinical action should be based on results.
+
+**© 2025 New Phase Ltd. All rights reserved.** 
