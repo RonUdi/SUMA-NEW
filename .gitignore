@@ -48,6 +48,9 @@ venv.bak/
 *.dcm
 *.dicom
 
+# Legacy SUMA2 code - exclude from tracking
+suma2/
+
 # Test artifacts
 .pytest_cache/
 .coverage
